@@ -1,0 +1,147 @@
+<nav class="navbar navbar-light bg-primary">
+    <div class="container-fluid">
+        <h2 style="color: aliceblue;">Bike Add UI</h2>
+        <div class="d-flex">
+            <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-danger">Add Bike</button>
+        </div>
+    </div>
+</nav>
+
+<table class="table table-light table-hover mt-3">
+    <thead class="table-secondary">
+        <tr mat-row class=" table-light">
+            <td scope="col">Content ID</td>
+            <td scope="col">Bike Name</td>
+            <td scope="col">Locale</td>
+            <td scope="col">Bike Model</td>
+            <td scope="col">Year</td>
+            <td scope="col">Price</td>
+            <td scope="col">Description</td>
+            <td scope="col">Primary Image</td>
+            <td scope="col">Bike Specs</td>
+            <td scope="col">SKU</td>
+            <td scope="col">Tech</td>
+            <td scope="col">Other Media</td>
+            <td scope="col">Action</td>
+               
+        </tr>
+    
+    </thead>
+    <tbody class="table-striped table-success">
+        <tr>
+            <td>247</td>
+            <td>za</td>
+            <td>Adventure 1</td>
+            <td>Conalgo</td>
+            <td>2022</td>
+            <td>4000</td>
+            <td>this oe fsg fd  afsagfbs dfac</td>
+            <td>srgs</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>
+                <button class="btn btn-info mx-3">Edit</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Bike Details</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="formValue">
+                <div class="mb-3">
+                    <label for="bikename">Bike Name:</label>
+                    <input type="text" class="form-control" placeholder="Bike Name" formControlName="bikeName"> <br>
+                    
+                </div>
+                <div class="mb-3">
+                    <label for="bikename">Locale:</label>
+                    <input type="text" class="form-control" placeholder="Locale" formControlName="locale"> <br>
+                
+                </div>
+                <div class="mb-3">
+                    <label for="year">Year:</label>
+                    <input type="text"  class="form-control" placeholder="Year" formControlName="year"> <br>
+                    
+                </div>
+                <div class="mb-3">
+                    <label for="contentID">content ID:</label>
+                    <input type="text" class="form-control" placeholder="Content ID" formControlName="contentID"> <br>
+                    
+                </div>
+                <div class="mb-3">
+                    <label for="primaryImageURL">PrimaryImageURL:</label>
+                    <input type="text" class="form-control" placeholder="Primary Image URL" formControlName="primaryImageURL"> <br>
+                    
+                </div>
+                <div class="mb-3">
+                    <label for="bikeModel">Bike Model:</label>
+                    <input type="text" class="form-control" placeholder="Bike Model" formControlName="bikeModel"> <br>
+                    
+                </div>
+                <div class="mb-3">
+                    <label for="price">Price:</label>
+                    <input type="text" class="form-control" placeholder="Price" formControlName="price"> <br>
+                </div>
+                <div class="mb-3">
+                    <label for="description">Description:</label>
+                    <input type="text" class="form-control" placeholder="Description" formControlName="description"> <br>
+                    <br>
+                </div>
+                <div class="mb-3">
+                    <label for="bikeSpecs">Bike Specs:</label>
+                    <ng-container >
+                        <div class="form-group col-md-5">
+                                <label>Key</label>
+                        <input type="email" class="form-control" formControlName="key" placeholder="Key">
+                        </div>
+                        <div class="form-group col-md-5">
+                        <label>Value</label>
+                        <input type="text" class="form-control" formControlName="value" placeholder="Value">
+                        </div>
+                        <button class="btn btn-success" (click)="addRow()">Add Row</button>
+                        <div class="form-group col-md-2" *ngIf="ind > 0">
+                        
+                        
+                        </div>
+                    </ng-container>
+                    <br>
+                </div>
+                <div class="mb-3">
+                    <label for="sku">Sku:</label>
+                    <input type="text" class="form-control" placeholder="SKU" formControlName="sku"> <br>
+                    
+                </div>
+                <div class="mb-3">
+                    <label for="tech">Tech:</label>
+                    <input type="text" class="form-control" placeholder="Tech" formControlName="tech"> <br>
+                    
+                </div>
+                <div class="mb-3">
+                    <label for="otherMedia">Other Media:</label>
+                    <input type="text" class="form-control" placeholder="Other media" formControlName="otherMedia"> <br>
+                    
+                </div>
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" (click)="postBikeDetails()" class="btn btn-primary">Add</button>
+        </div>
+      </div>
+    </div>
+  </div>
